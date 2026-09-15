@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikoh To'yi - Nahorgi Osh Taklifnomasi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0a0a0c;
+            color: #f8fafc;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 10px;
+        }
+        .container {
+            max-width: 480px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .block {
+            background: linear-gradient(145deg, rgba(26, 26, 36, 0.9), rgba(15, 15, 22, 0.95));
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            border-radius: 20px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 15px rgba(212, 175, 55, 0.1);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .rings {
+            font-size: 2.5rem;
+            animation: pulse 2s infinite alternate;
+        }
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.15); }
+        }
+        .main-title {
+            font-family: 'Alex Brush', cursive;
+            font-size: 3.5rem;
+            color: #d4af37;
+            text-shadow: 0 0 12px rgba(212,175,55,0.4);
+        }
+        .subtitle {
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #94a3b8;
+            margin-top: 5px;
+        }
+        .hero-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 14px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+        }
+        .quote {
+            font-style: italic;
+            color: #e2e8f0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .timer-grid {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .time-box {
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            padding: 10px;
+            width: 22%;
+        }
+        .time-num {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #f59e0b;
+        }
+        .time-lbl {
+            font-size: 0.7rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+        }
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.85rem;
+        }
+        .calendar-table th {
+            color: #d4af37;
+            padding: 6px;
+        }
+        .calendar-table td {
+            padding: 8px;
+            color: #cbd5e1;
+        }
+        .highlight-date {
+            background: #d4af37;
+            color: #000 !important;
+            font-weight: bold;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+        }
+        .event-time {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #f59e0b;
+        }
+        .btn-map {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            color: #000;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 30px;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+            transition: 0.3s;
+        }
+        .btn-map:hover {
+            transform: scale(1.03);
+        }
+        .host-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #d4af37;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- 1-Bolim: Bosh sarlavha -->
+        <div class="block">
+            <div class="rings">💍</div>
+            <div class="main-title">Taklifnoma</div>
+            <div class="subtitle">Muhtaram Mehmonimiz</div>
+        </div>
+
+        <!-- 2-Bolim: Tematik Rasm -->
+        <div class="block">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Wedding" class="hero-img">
+        </div>
+
+        <!-- 3-Bolim: Dil Izhori -->
+        <div class="block">
+            <p class="quote">"Alloh ularning qalblarini sevgi ila birlashtirdi."</p>
+            <p style="font-size: 0.9rem; color: #94a3b8; margin-top: 10px;">Baxtli kunimizda biz uchun qalbingizdagi eng yaxshi tilaklaringiz bilan yonimizda bo'lishingizni so'raymiz!</p>
+        </div>
+
+        <!-- 4-Bolim: Taymer -->
+        <div class="block">
+            <div style="font-size: 0.85rem; color: #d4af37; text-transform: uppercase; margin-bottom: 8px;">To'y kuniga qolgan vaqt:</div>
+            <div class="timer-grid">
+                <div class="time-box"><div id="days" class="time-num">00</div><div class="time-lbl">Kun</div></div>
+                <div class="time-box"><div id="hours" class="time-num">00</div><div class="time-lbl">Soat</div></div>
+                <div class="time-box"><div id="minutes" class="time-num">00</div><div class="time-lbl">Daqiqa</div></div>
+                <div class="time-box"><div id="seconds" class="time-num">00</div><div class="time-lbl">Soniya</div></div>
+            </div>
+        </div>
+
+        <!-- 5-Bolim: Kalendar (Sentyabr 2026) -->
+        <div class="block">
+            <div style="color: #d4af37; font-weight: 600; margin-bottom: 5px;">Sentyabr 2026</div>
+            <table class="calendar-table">
+                <tr><th>Du</th><th>Se</th><th>Ch</th><th>Pa</th><th>Ju</th><th>Sh</th><th>Ya</th></tr>
+                <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+                <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+                <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+                <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td class="highlight-date">27</td></tr>
+                <tr><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td><td></td></tr>
+            </table>
+        </div>
+
+        <!-- 6-Bolim: Tadbir Vaqti -->
+        <div class="block">
+            <div style="font-size: 0.9rem; color: #cbd5e1;">Nahorgi Osh Dasturxoni</div>
+            <div class="event-time">Soat 08:00 da</div>
+            <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 5px;">Aziz mehmonimiz, to'y oshimizga marhamat qiling!</p>
+        </div>
+
+        <!-- 7-Bolim: Manzil va Lokatsiya -->
+        <div class="block">
+            <div style="color: #d4af37; font-weight: 600; margin-bottom: 5px;">Manzil:</div>
+            <p style="font-size: 0.9rem; color: #e2e8f0;">Farg'ona tumani, Xonqiz qishlog'i, Bunyodkor ko'chasi, 56-uy</p>
+            <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 4px;">(Mo'ljal: 25-maktab)</p>
+            <a href="https://maps.google.com/?q=40.2878711,71.4938441" target="_blank" class="btn-map">📍 Google Maps orqali ochish</a>
+        </div>
+
+        <!-- 8-Bolim: Yakuniy Ehtirom va Taklif -->
+        <div class="block">
+            <p style="font-size: 0.85rem; color: #94a3b8;">Tashrifingizdan boshimiz osmonga yetadi!</p>
+            <div class="host-name">Dadaxonov Xasanxon taklif etib qoladi</div>
+            <div style="font-size: 1.5rem; margin-top: 10px;">✨ 🕊️ ✨</div>
+        </div>
+
+    </div>
+
+    <script>
+        const weddingDate = new Date(2026, 8, 27, 8, 0, 0).getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const diff = weddingDate - now;
+
+            if (diff > 0) {
+                const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = d < 10 ? '0' + d : d;
+                document.getElementById('hours').innerText = h < 10 ? '0' + h : h;
+                document.getElementById('minutes').innerText = m < 10 ? '0' + m : m;
+                document.getElementById('seconds').innerText = s < 10 ? '0' + s : s;
+            } else {
+                document.getElementById('days').innerText = '00';
+                document.getElementById('hours').innerText = '00';
+                document.getElementById('minutes').innerText = '00';
+                document.getElementById('seconds').innerText = '00';
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
