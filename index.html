@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To'y Taklifnomasi — Dadaxonov Xasanxon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #c5a059;
+            --primary-light: #e6c88b;
+            --dark: #121820;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text-gold: #e5c158;
+            --text-light: #f0ece1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(197, 160, 89, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(197, 160, 89, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(18, 24, 32, 0.8) 0%, #0a0d12 100%);
+            background-attachment: fixed;
+            padding: 20px 10px;
+        }
+
+        .container {
+            max-width: 550px;
+            width: 100%;
+            background: rgba(20, 26, 35, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            border-radius: 24px;
+            padding: 40px 25px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 
+                        0 0 30px rgba(197, 160, 89, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .corner-ornament {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--primary);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        .top-left { top: 15px; left: 15px; border-right: none; border-bottom: none; border-top-left-radius: 12px; }
+        .top-right { top: 15px; right: 15px; border-left: none; border-bottom: none; border-top-right-radius: 12px; }
+        .bottom-left { bottom: 15px; left: 15px; border-right: none; border-top: none; border-bottom-left-radius: 12px; }
+        .bottom-right { bottom: 15px; right: 15px; border-left: none; border-top: none; border-bottom-right-radius: 12px; }
+
+        .bismillah {
+            font-family: 'Alex Brush', cursive;
+            font-size: 28px;
+            color: var(--primary-light);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #a0a5b0;
+            margin-bottom: 25px;
+        }
+
+        .hero-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+            padding: 4px;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+        }
+
+        .invitation-title {
+            font-family: 'Cinzel', serif;
+            font-size: 15px;
+            color: var(--primary);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .host-name {
+            font-family: 'Cinzel', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .invitation-text {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #d1d5db;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* Countdown Timer */
+        .countdown-title {
+            font-family: 'Cinzel', serif;
+            font-size: 13px;
+            color: var(--primary-light);
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .timer-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 35px;
+        }
+
+        .timer-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(197, 160, 89, 0.25);
+            border-radius: 14px;
+            padding: 12px 8px;
+            min-width: 70px;
+            backdrop-filter: blur(5px);
+        }
+
+        .timer-val {
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-gold);
+            display: block;
+        }
+
+        .timer-label {
+            font-size: 10px;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* Event Details */
+        .event-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+            padding-bottom: 10px;
+        }
+
+        .card-header i {
+            color: var(--primary);
+            font-size: 20px;
+        }
+
+        .card-header h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            color: var(--primary-light);
+            letter-spacing: 1px;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 13.5px;
+            color: #e2e8f0;
+            line-height: 1.5;
+        }
+
+        .info-row i {
+            color: var(--primary);
+            width: 18px;
+            margin-top: 3px;
+        }
+
+        /* Map Button */
+        .btn-map {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #c5a059 0%, #9e7b39 100%);
+            color: #0d1117;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4);
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .btn-map:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(197, 160, 89, 0.6);
+        }
+
+        .footer-text {
+            margin-top: 30px;
+            font-family: 'Alex Brush', cursive;
+            font-size: 24px;
+            color: var(--primary-light);
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 30px 18px; }
+            .host-name { font-size: 19px; }
+            .timer-box { min-width: 60px; padding: 10px 4px; }
+            .timer-val { font-size: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Corner Ornaments -->
+        <div class="corner-ornament top-left"></div>
+        <div class="corner-ornament top-right"></div>
+        <div class="corner-ornament bottom-left"></div>
+        <div class="corner-ornament bottom-right"></div>
+
+        <!-- Bismillah / Intro -->
+        <div class="bismillah">Bismillahir Rahmanir Rahim</div>
+        <div class="subtitle">To'y Taklifnomasi</div>
+
+        <!-- Decorative Image -->
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=80" alt="Wedding Ring" class="hero-img">
+
+        <!-- Host Info -->
+        <div class="invitation-title">Muhtaram Mehmonimiz!</div>
+        <div class="host-name">Dadaxonov Xasanxon<br>Baxodirjon o'g'li</div>
+        
+        <p class="invitation-text">
+            Sizni va oila a'zolaringizni xonadonimizda bo'lib o'tadigan quvonchli va tantanali <strong>Nahorgi Osh</strong> marosimiga lutfan taklif etamiz!
+        </p>
+
+        <!-- Countdown Timer -->
+        <div class="countdown-title">Tantana Boshlanishiga:</div>
+        <div class="timer-container">
+            <div class="timer-box">
+                <span class="timer-val" id="days">00</span>
+                <span class="timer-label">Kun</span>
+            </div>
+            <div class="timer-box">
+                <span class="timer-val" id="hours">00</span>
+                <span class="timer-label">Soat</span>
+            </div>
+            <div class="timer-box">
+                <span class="timer-val" id="minutes">00</span>
+                <span class="timer-label">Daqiqa</span>
+            </div>
+            <div class="timer-box">
+                <span class="timer-val" id="seconds">00</span>
+                <span class="timer-label">Soniya</span>
+            </div>
+        </div>
+
+        <!-- Event Details Card -->
+        <div class="event-card">
+            <div class="card-header">
+                <i class="fa-solid fa-utensils"></i>
+                <h3>Nahorgi Osh Marosimi</h3>
+            </div>
+            
+            <div class="info-row">
+                <i class="fa-solid fa-calendar-days"></i>
+                <div>
+                    <strong>Sana:</strong> 27-sentyabr, 2026-yil
+                </div>
+            </div>
+
+            <div class="info-row">
+                <i class="fa-solid fa-clock"></i>
+                <div>
+                    <strong>Vaqt:</strong> Ertalabki soat 06:00 dan 09:00 gacha
+                </div>
+            </div>
+
+            <div class="info-row">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                    <strong>Manzil:</strong> Farg'ona viloyati, Farg'ona tumani, Xonqiz qishlog'i, Bunyodkor ko'chasi, 56-uy.
+                </div>
+            </div>
+
+            <div class="info-row">
+                <i class="fa-solid fa-map-pin"></i>
+                <div>
+                    <strong>Mo'ljal:</strong> 25-maktab
+                </div>
+            </div>
+        </div>
+
+        <!-- Location Link / Map Button -->
+        <a href="https://maps.google.com/?q=Fergana+Khonqiz" target="_blank" class="btn-map">
+            <i class="fa-solid fa-map-location-dot"></i> Geolokatsiyani Ochiq Ko'rish
+        </a>
+
+        <div class="footer-text">Tashrifingizdan mamnun bo'lamiz!</div>
+    </div>
+
+    <!-- Countdown Timer Script -->
+    <script>
+        const weddingDate = new Date("September 27, 2026 06:00:00").getTime();
+
+        const updateTimer = () => {
+            const now = new Date().getTime();
+            const difference = weddingDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+                document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+                document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+                document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+            } else {
+                document.querySelector(".countdown-title").innerText = "To'y Marosimi Boshlandi!";
+                document.querySelector(".timer-container").style.display = "none";
+            }
+        };
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+</body>
+</html>
