@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikoh To'yi Taklifnomasi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0f172a;
+            color: #f8fafc;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        .card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 24px;
+            padding: 40px 25px;
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 30px rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .rings-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            animation: pulse 2s infinite alternate;
+        }
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+        .header-title {
+            font-family: 'Alex Brush', cursive;
+            font-size: 3.5rem;
+            color: #d4af37;
+            margin-bottom: 5px;
+            text-shadow: 0 0 10px rgba(212,175,55,0.4);
+        }
+        .guest-title {
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+        .couple-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 2px solid rgba(212, 175, 55, 0.5);
+            margin: 15px 0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+        .love-quote {
+            font-style: italic;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 15px 0;
+            padding: 0 10px;
+        }
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            margin: 20px 0;
+        }
+        .timer-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: #d4af37;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .countdown {
+            display: flex;
+            justify-content: space-around;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .time-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .time-number {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #f59e0b;
+        }
+        .time-label {
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+        .details-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .time-highlight {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #f59e0b;
+            margin-bottom: 5px;
+        }
+        .text-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #cbd5e1;
+        }
+        .btn-map {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            color: #000;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-map:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px rgba(212, 175, 55, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="rings-icon">💍</div>
+        <div class="guest-title">Muhtaram Mehmonimiz</div>
+        <div class="header-title">Taklifnoma</div>
+        
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Kelin va Kuyov" class="couple-img">
+
+        <p class="love-quote">"Ikki qalbdan yangragan yagona samimiy tuyg'ular, umrbodlik rishtaga va baxtli oilaga zamin yaratadi..."</p>
+        
+        <div class="divider"></div>
+
+        <div class="timer-title">To'yimizga qolgan vaqt:</div>
+        <div class="countdown">
+            <div class="time-block">
+                <span id="days" class="time-number">00</span>
+                <span class="time-label">Kun</span>
+            </div>
+            <div class="time-block">
+                <span id="hours" class="time-number">00</span>
+                <span class="time-label">Soat</span>
+            </div>
+            <div class="time-block">
+                <span id="minutes" class="time-number">00</span>
+                <span class="time-label">Daqiqa</span>
+            </div>
+            <div class="time-block">
+                <span id="seconds" class="time-number">00</span>
+                <span class="time-label">Soniya</span>
+            </div>
+        </div>
+
+        <p class="text-desc">Sizni quvonchli kunimizda yozilajak to'y dasturxonimizga taklif etamiz!</p>
+        
+        <div class="details-box">
+            <div class="time-highlight">Soat 08:00 da</div>
+            <p class="text-desc">To'y oshimizga marhamat qiling!</p>
+        </div>
+
+        <div class="details-box">
+            <p class="text-desc"><strong>Manzil:</strong> Farg'ona viloyati, Farg'ona tumani, Xonqiz shaharchasi, Bunyodkor ko'chasi 56-uy</p>
+            <p class="text-desc" style="font-size: 0.85rem; color: #94a3b8; margin-top: 5px;">(Mo'ljal: 25-maktab)</p>
+            <a href="https://maps.google.com/?q=40.2878711,71.4938441" target="_blank" class="btn-map">📍 Lokatsiyani xaritada ochish</a>
+        </div>
+    </div>
+
+    <script>
+        const weddingDate = new Date(2026, 8, 27, 8, 0, 0).getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = weddingDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+                document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+                document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+                document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+            } else {
+                document.getElementById('days').innerText = '00';
+                document.getElementById('hours').innerText = '00';
+                document.getElementById('minutes').innerText = '00';
+                document.getElementById('seconds').innerText = '00';
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
